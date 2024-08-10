@@ -8,6 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: '0 * * * *'
 
 permissions:
   contents: write
@@ -17,9 +19,10 @@ jobs:
     name: build工作
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-
     - name: 读取仓库内容🫡
+      uses: actions/checkout@v4
+
+    - name: 构建go环境⭐
       uses: actions/setup-go@v4
       with:
         go-version: '1.22.5'
@@ -35,3 +38,19 @@ jobs:
       with:
         branch: gh-pages
         folder: ./
+
+  run_scheduled_task:
+    name: 定时器任务
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: 读取仓库内容🫡
+        uses: actions/checkout@v4
+
+      - name: 构建go环境⭐
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22.5'
+
+      - name: 运行程序🏄
+        run: ./FeiShuBot
