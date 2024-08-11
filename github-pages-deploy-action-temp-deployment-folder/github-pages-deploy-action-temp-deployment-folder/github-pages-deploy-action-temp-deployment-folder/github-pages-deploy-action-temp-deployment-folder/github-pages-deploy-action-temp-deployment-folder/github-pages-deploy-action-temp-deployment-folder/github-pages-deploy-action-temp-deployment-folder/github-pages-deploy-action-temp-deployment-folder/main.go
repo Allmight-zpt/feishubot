@@ -1,9 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"time"
-
 	"github.com/CatchZeng/feishu/pkg/feishu"
 )
 
@@ -17,12 +14,8 @@ func SendMessage() string {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(respone.Msg)
 	return respone.Msg
 }
 func main() {
-	for {
-		SendMessage()
-		time.Sleep(2 * time.Second)
-	}
+	SendMessage()
 }
