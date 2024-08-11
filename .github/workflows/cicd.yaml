@@ -9,7 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 * * * *'
+    # 每天 UTC 时间的午夜 0 点（北京时间早上 8 点）执行
+    - cron: '0 0 * * *' 
+    # 每天 UTC 时间的下午 2 点（北京时间晚上 10 点）执行
+    - cron: '0 14 * * *'
 
 permissions:
   contents: write
@@ -51,6 +54,9 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.22.5'
+
+      - name: 项目打包📦
+        run: go build -v ./...
 
       - name: 运行程序🏄
         run: ./FeiShuBot
