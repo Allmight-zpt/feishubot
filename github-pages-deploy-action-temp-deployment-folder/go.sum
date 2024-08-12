@@ -1,3 +1,5 @@
+github.com/6tail/lunar-go v1.3.13 h1:ixRxt8T11Io032FNRXyJGdUFDOGIBdnUjQSWp0XdeWY=
+github.com/6tail/lunar-go v1.3.13/go.mod h1:mMvCby9aWTSmsZjnv+5EOW7taJFV4RsjNcQLRl/3whY=
 github.com/CatchZeng/feishu v1.3.2 h1:3A51zYAvxGwPHSy5MGL0thM7o7v/+ufgGfVEbKkd1Ps=
 github.com/CatchZeng/feishu v1.3.2/go.mod h1:osX8HjZ4feBHq6F0ggxor4/VSNM3CpyqlWKZZ4IVsdw=
 github.com/go-resty/resty/v2 v2.7.0 h1:me+K9p3uhSmXtrBZ4k9jcEAfJmuC8IivWHwaLZwPrFY=
