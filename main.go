@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 
 	"github.com/6tail/lunar-go/calendar"
 	"github.com/CatchZeng/feishu/pkg/feishu"
@@ -324,9 +325,7 @@ var ROMANTIC_QUOTES = []string{
 
 // 获取节日消息
 func GetHolidayMessage() string {
-	// solar := calendar.NewSolarFromDate(time.Now())
-	// 测试
-	solar := calendar.NewSolarFromYmd(2024, 8, 7)
+	solar := calendar.NewSolarFromDate(time.Now())
 
 	solar_month := solar.GetMonth()
 	solar_day := solar.GetDay()
@@ -447,7 +446,7 @@ func SendCardMessage(client *feishu.Client) {
 func SendMessage() string {
 	client := GetFeiShuClient(FEI_SHU_TOKEN, FEI_SHU_KEY)
 	msg := feishu.NewTextMessage()
-	msg.Content.Text = "hello world"
+	msg.Content.Text = "我上号了家人们！"
 	_, respone, err := client.Send(msg)
 	if err != nil {
 		panic(err)
