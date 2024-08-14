@@ -10,11 +10,11 @@ import (
 
 // 测试token：318e87b6-c6ee-4d66-8169-b60a881cac25
 // 上线token：8a20f753-7f44-4051-87ba-fb254505a589
-var FEI_SHU_TOKEN = "318e87b6-c6ee-4d66-8169-b60a881cac25"
+var FEI_SHU_TOKEN = "8a20f753-7f44-4051-87ba-fb254505a589"
 
 // 测试key：wNeRboPX4HSHrrdG5l6oU
 // 上线key：SK1w1TyoyZNec3RMzmlZdb
-var FEI_SHU_KEY = "wNeRboPX4HSHrrdG5l6oU"
+var FEI_SHU_KEY = "SK1w1TyoyZNec3RMzmlZdb"
 
 // 定义阳历节日及其祝福
 var SOLARHOLIDAYS = map[string]string{
