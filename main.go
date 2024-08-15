@@ -338,24 +338,26 @@ func GetHolidayMessage() string {
 	lunar_jieqi := lunar.GetJieQi()
 	lunar_month_day_key := fmt.Sprintf("%d-%d", lunar_month, lunar_day)
 
+	fmt.Println(solar_hour)
 	// 检查是否是晚上10点
-	if solar_hour == 22 {
-		// fmt.Println("夜深了🌙，廖老师出门在外请注意安全，如果还在外面请收拾好东西准备回家休息🏠！")
+	if solar_hour > 15 {
+		fmt.Println("夜深了🌙，廖老师出门在外请注意安全，如果还在外面请收拾好东西准备回家休息🏠！")
 		return "夜深了🌙，廖老师出门在外请注意安全，如果还在外面请收拾好东西准备回家休息🏠！"
 	} else {
 		// 检查是否是阳历节日
 		if message, ok := SOLARHOLIDAYS[solar_month_day_key]; ok {
-			// fmt.Println(message)
+			fmt.Println(message)
 			return message
 		} else {
 			// 检查是否是农历节日
 			if message, ok := LUNARHOLIDAYS[lunar_month_day_key]; ok {
-				// fmt.Println(message)
+				fmt.Println(message)
 				return message
 			} else if len(lunar_jieqi) > 0 {
+				fmt.Println(lunar_jieqi)
 				return "今天是" + lunar_jieqi + "，" + JIEQI[lunar_jieqi]
 			} else {
-				// fmt.Println("家人们，努力工作之余也要记得锻炼身体，多吃蔬菜水果🍉！")
+				fmt.Println("家人们，努力工作之余也要记得锻炼身体，多吃蔬菜水果🍉！")
 				return "家人们，努力工作之余也要记得锻炼身体，多吃蔬菜水果🍉！"
 			}
 		}
