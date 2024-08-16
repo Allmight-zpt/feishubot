@@ -340,7 +340,7 @@ func GetHolidayMessage() string {
 
 	fmt.Println(solar_hour)
 	// 检查是否是晚上10点
-	if solar_hour > 15 {
+	if solar_hour > 10 {
 		fmt.Println("夜深了🌙，廖老师出门在外请注意安全，如果还在外面请收拾好东西准备回家休息🏠！")
 		return "夜深了🌙，廖老师出门在外请注意安全，如果还在外面请收拾好东西准备回家休息🏠！"
 	} else {
